@@ -308,7 +308,7 @@ namespace Cake.NuGet.Tests.Unit
                                      "Falling back to using root folder of NuGet package."))
                     .ToList();
 
-                Assert.Equal(1, entries.Count);
+                Assert.Single(entries);
             }
         }
     }

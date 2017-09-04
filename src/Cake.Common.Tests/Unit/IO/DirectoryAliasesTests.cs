@@ -158,7 +158,7 @@ namespace Cake.Common.Tests.Unit.IO
                 DirectoryAliases.CleanDirectory(context, directory.Path, info => !info.Hidden);
 
                 // Then
-                Assert.Equal(1, directory.GetDirectories("*", SearchScope.Recursive).Count());
+                Assert.Single(directory.GetDirectories("*", SearchScope.Recursive));
                 Assert.True(fixture.FileSystem.GetDirectory("/Temp/Hello/Hidden").Exists);
             }
 
@@ -226,7 +226,7 @@ namespace Cake.Common.Tests.Unit.IO
 
                 // Then
                 Assert.True(context.FileSystem.GetDirectory("/Temp").Exists);
-                Assert.Equal(1, directory.GetDirectories("*", SearchScope.Recursive).Count());
+                Assert.Single(directory.GetDirectories("*", SearchScope.Recursive));
                 Assert.True(context.FileSystem.GetDirectory("/Temp/Goodbye").Exists);
             }
         }
