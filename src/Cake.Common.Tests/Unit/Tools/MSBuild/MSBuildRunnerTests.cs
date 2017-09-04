@@ -9,6 +9,8 @@ using Cake.Core.Diagnostics;
 using Cake.Testing;
 using Xunit;
 
+#pragma warning disable xUnit1025 // InlineData should be unique within the Theory it belongs to
+
 namespace Cake.Common.Tests.Unit.Tools.MSBuild
 {
     public sealed class MSBuildRunnerTests
@@ -912,3 +914,5 @@ namespace Cake.Common.Tests.Unit.Tools.MSBuild
         }
     }
 }
+
+#pragma warning restore xUnit1025 // InlineData should be unique within the Theory it belongs to
