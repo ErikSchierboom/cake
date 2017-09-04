@@ -105,9 +105,9 @@ namespace Cake.NuGet.Tests.Unit
 
                 // Then
                 Assert.Equal(3, files.Count);
-                Assert.True(files.Any(p => p.Path.FullPath == "/Working/tools/Foo/Foo.exe"));
-                Assert.True(files.Any(p => p.Path.FullPath == "/Working/tools/Foo/Bar/Qux.pdb"));
-                Assert.True(files.Any(p => p.Path.FullPath == "/Working/tools/Foo/Foo.XML"));
+                Assert.Contains(files, p => p.Path.FullPath == "/Working/tools/Foo/Foo.exe");
+                Assert.Contains(files, p => p.Path.FullPath == "/Working/tools/Foo/Bar/Qux.pdb");
+                Assert.Contains(files, p => p.Path.FullPath == "/Working/tools/Foo/Foo.XML");
             }
         }
 

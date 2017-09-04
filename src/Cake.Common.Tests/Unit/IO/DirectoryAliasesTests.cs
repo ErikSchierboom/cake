@@ -1486,9 +1486,9 @@ namespace Cake.Common.Tests.Unit.IO
                 var directories = DirectoryAliases.GetSubDirectories(context, directoryPath);
 
                 // Then
-                Assert.True(directories.Any(d => d.GetDirectoryName() == "Stuff"));
-                Assert.True(directories.Any(d => d.GetDirectoryName() == "Things"));
-                Assert.False(directories.Any(d => d.GetDirectoryName() == "file1.txt"));
+                Assert.Contains(directories, d => d.GetDirectoryName() == "Stuff");
+                Assert.Contains(directories, d => d.GetDirectoryName() == "Things");
+                Assert.DoesNotContain(directories, d => d.GetDirectoryName() == "file1.txt");
             }
 
             private static void CreateFileStructure(FakeFileSystem ffs)
