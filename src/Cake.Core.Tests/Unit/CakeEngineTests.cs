@@ -54,7 +54,7 @@ namespace Cake.Core.Tests.Unit
                 var result = engine.RegisterTask("task");
 
                 // Then
-                Assert.True(engine.Tasks.Contains(result.Task));
+                Assert.Contains(result.Task, engine.Tasks);
             }
 
             [Fact]
